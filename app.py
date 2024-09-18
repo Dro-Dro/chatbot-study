@@ -6,14 +6,23 @@ client = OpenAI(
 
 messages=[]
 
-# user input
-user_input = input('Enter your prompt: ')
+while True:
+    # user input
+    user_input = input('Enter your prompt: ')
 
-# create prompt
-messages.append({'role': 'user', 'content': user_input})
+    # quit chat if user types q
+    if user_input == 'q':
+        exit()
 
-# send the api call
-response = client.chat.completions.create(messages = messages, model = "gpt-3.5-turbo")
+    # create prompt
+    messages.append({'role': 'user', 'content': user_input})
 
-# display response in console
-print(response.choices[0].message.content)
+    # send the api call
+    response = client.chat.completions.create(messages = messages, model = "gpt-3.5-turbo")
+
+    # display response in console
+    print(response.choices[0].message.content)
+
+    # past conversation printed
+    messages.append(response.choices[0])
+    print(messages)
