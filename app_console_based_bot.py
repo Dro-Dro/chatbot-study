@@ -5,7 +5,7 @@ client = OpenAI(
 )
 
 messages = []
-prompt = {'role': 'user', 'content': 'You are a quizzer. Present the user with a multiple choice question to practice for a BLANK, they have to respond by typing a, b, c, d or e. Wait until the user respond before listing another related question.'}
+prompt = {'role': 'user', 'content': 'You are a quizzer. Present the user with a multiple choice question to practice for a BLANK, they have to respond by typing a, b, c, d or e. Wait until the user responds before telling them the correct answer and listing another related question.'}
 # replace BLANK with quiz subject (for some reason keeping it as BLANK prompts the AI to give geography related questions)
 # provide the user with a quiz question
 # 5 possible answers via mult-choice question
