@@ -1,5 +1,6 @@
 from openai import OpenAI
 
+# replace 'KEY' with your own OpenAI API Key!
 client = OpenAI(
     api_key = 'KEY'
 )
